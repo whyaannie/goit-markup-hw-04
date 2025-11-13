@@ -134,6 +134,11 @@ a {
 
 .section-hero {
     background-color: #2E2F42;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)), 
+    url(/goit-markup-hw-04/images/icons/people-office.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #fff;
     text-align: center;
     padding: 188px 0;
@@ -184,6 +189,17 @@ a {
     padding: 120px 0;
 }
 
+.skills-icon {
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+    width: 264px;
+    height: 112px;
+    background: #F4F4FD;
+    margin-bottom: 8px;
+    padding: 16px;
+    display: flex;
+}
+
 .visually-hidden {
     position: absolute;
     white-space: nowrap;
@@ -200,10 +216,16 @@ a {
 .skills-list {
     display: flex;
     gap: 24px;
+    align-items: center;
 }
 
 .skills-item {
     width: calc((100% - 72px) / 4);
+    background-color: #fff;
+    border: 1px solid #e7e9fc;
+    border-radius: 4px;
+    text-align: center;
+    padding: 24px;
 }
 
 .skills-title {
@@ -245,6 +267,7 @@ a {
 .team-list {
     display: flex;
     gap: 24px;
+    justify-content: center;
 }
 
 .team-item {
@@ -252,6 +275,8 @@ a {
     background-color: #ffffff;
     border-radius: 0 0 4px 4px;
     box-shadow: 0 1px 6px rgba(46, 47, 66, 0.08);
+    text-align: center;
+    padding-bottom: 32px;
 }
 
 .team-photo {
@@ -273,6 +298,28 @@ a {
 .team-position {
     text-align: center;
     color: #434455;
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms ease;
+}
+
+.social-link:hover,
+.social-link:focus {
+    background-color: #404bbf;
 }
 
 .portfolio-section {
@@ -304,6 +351,40 @@ a {
     display: block;
     background-color: #fff;
     border: 1px solid #e7e9fc;
+    cursor: pointer;
+    transition: box-shadow 250ms ease;
+}
+
+.portfolio-item:hover,
+.portfolio-item:focus {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77, 90, 229, 0.9);
+    color: #f4f4fd;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 40px 32px;
+    transform: translateY(100%);
+    transition: transform 250ms ease;
+}
+
+.portfolio-thumb:hover .overlay-text,
+.portfolio-item:focus .overlay-text {
+    transform: translateY(0%);
 }
 
 .portfolio-content {
@@ -330,10 +411,22 @@ a {
 
 .footer {
     background-color: #2E2F42;
+    color: #F4F4FD;
     padding: 100px 0;
 }
 
+.footer-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.footer-logo-box {
+    max-width: 264px;
+}
+
 .footer-logo {
+    text-decoration: none;
     display: inline-block;
     margin-bottom: 16px;
     font-family: "Raleway", sans-serif;
@@ -367,6 +460,29 @@ a {
     color: #F4F4FD;
     max-width: 264px;
     margin-left: 156px;
+}
+
+.footer-socials-title {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 .logo-part {
