@@ -69,6 +69,9 @@ a {
     border-bottom: 1px solid #e7e9fc;
     align-items: center;
     height: 72px;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -97,11 +100,24 @@ a {
     color: #2E2F42;
     display: block;
     padding: 24px 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-    color: #404BBF;
+    color: #404bbf;
+}
+
+.nav-link::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404bbf;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
 }
 
 .address {
@@ -121,6 +137,7 @@ a {
     color: #434455;
     text-decoration: none;
     font-weight: 400;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -142,6 +159,7 @@ a {
     color: #fff;
     text-align: center;
     padding: 188px 0;
+    max-width: 1440px;
 }
 
 .hero-container {
@@ -178,6 +196,7 @@ a {
     border: none;
     border-radius: 4px;
     min-width: 169px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -228,6 +247,17 @@ a {
     padding: 24px;
 }
 
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    border: 1px solid #8e8f99;
+    margin-bottom: 8px;
+}
+
 .skills-title {
     font-weight: 500;
     font-size: 20px;
@@ -274,7 +304,9 @@ a {
     width: calc((100%-72px) / 4);
     background-color: #ffffff;
     border-radius: 0 0 4px 4px;
-    box-shadow: 0 1px 6px rgba(46, 47, 66, 0.08);
+    box-shadow: 0 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
     text-align: center;
     padding-bottom: 32px;
 }
@@ -315,6 +347,11 @@ a {
     align-items: center;
     justify-content: center;
     transition: background-color 250ms ease;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icon {
+    fill: #f4f4fd;
 }
 
 .social-link:hover,
@@ -352,7 +389,7 @@ a {
     background-color: #fff;
     border: 1px solid #e7e9fc;
     cursor: pointer;
-    transition: box-shadow 250ms ease;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item:hover,
@@ -360,6 +397,30 @@ a {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.app-description {
+    position: absolute;
+    top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--cloud, #f4f4fd);
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .app-description {
+    transform: translateY(0%);
 }
 
 .portfolio-thumb {
@@ -380,11 +441,6 @@ a {
     padding: 40px 32px;
     transform: translateY(100%);
     transition: transform 250ms ease;
-}
-
-.portfolio-thumb:hover .overlay-text,
-.portfolio-item:focus .overlay-text {
-    transform: translateY(0%);
 }
 
 .portfolio-content {
@@ -419,10 +475,11 @@ a {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+    margin-right: 120px
 }
 
 .footer-logo-box {
-    max-width: 264px;
+margin-right: 120px;
 }
 
 .footer-logo {
@@ -457,14 +514,21 @@ a {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #F4F4FD;
+    color: #FFFFFF;
     max-width: 264px;
     margin-left: 156px;
+    margin-top: 16px;
 }
 
 .footer-socials-title {
     font-weight: 500;
     font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.social-text {
+    font-weight: 500;
+    color: #ffffff;
     margin-bottom: 16px;
 }
 
@@ -476,13 +540,29 @@ a {
     margin: 0;
 }
 
-.social-links .link {
+.social-item {
+    width: 40px;
+    height: 40px;
+}
+
+.link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--iris, #4d5ae5);
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover,
+.link:focus {
+    background-color: #31d0aa;
+}
+
+.icon {
+    fill: var(--cloud, #f4f4fd);
 }
 
 .logo-part {
