@@ -237,7 +237,6 @@ a {
 
 .skills-item {
     width: calc((100% - 72px) / 4);
-    text-align: center;
 }
 
 .icon-container {
@@ -314,7 +313,6 @@ a {
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: #2E2F42;
-    margin-top: 32px;
     margin-bottom: 8px;
     text-align: center;
 }
@@ -363,8 +361,6 @@ a {
     text-transform: capitalize;
     text-align: center;
     color: #2E2F42;
-    padding-top: 120px;
-    padding-bottom: 72px;
     margin-bottom: 72px;
 }
 
@@ -451,8 +447,6 @@ a {
 .footer-container {
     display: flex;
     align-items: baseline;
-    justify-content: space-between;
-    margin-right: 120px
 }
 
 .footer-logo-box {
@@ -493,8 +487,6 @@ margin-right: 120px;
     letter-spacing: 0.02em;
     color: #FFFFFF;
     max-width: 264px;
-    margin-left: 156px;
-    margin-top: 16px;
 }
 
 .social-text {
